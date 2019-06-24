@@ -1,0 +1,30 @@
+{
+  "name": "vue-tooltip-example",
+  "version": "1.0.0",
+  "description": "Simple vue tooltip example",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack --env.dev --watch",
+    "build-dev": "webpack --env.dev",
+    "build-prod": "webpack --env.prod"
+  },
+  "author": "Mariusz Baran <mariusz.baran23@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}

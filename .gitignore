@@ -1,0 +1,5 @@
+node_modules
+# build artefacts
+dist
+# system files
+.DS_Store
