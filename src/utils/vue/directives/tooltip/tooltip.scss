@@ -1,22 +1,21 @@
 .tooltip {
-  font-size: 12px;
-  font-weight: 400;
-
   z-index: 10000;
   display: none;
-  max-width: 200px;
-  background: #ebebeb;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  color: black;
   padding: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  max-width: 200px;
+  box-shadow: 0 0 8px #ccc;
+  border-radius: 3px;
+  background: white;
+  color: black;
   opacity: 0;
   transition: opacity .2s linear;
 
   &--align {
     &_left {
       &::after {
-        left: 10px;
+        left: 20px;
         right: auto;
       }
     }
@@ -25,14 +24,14 @@
       &::after {
         left: 50%;
         right: auto;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%) rotateZ(-45deg);
       }
     }
 
     &_right {
       &::after {
         left: auto;
-        right: 10px;
+        right: 20px;
       }
     }
   }
@@ -44,9 +43,14 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: -7px;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid #ccc;
+    bottom: -12px;
+    width: 0;
+    height: 0;
+    margin-left: -3px;
+    border: 6px solid black;
+    border-color: transparent transparent white white;
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+    box-shadow: -2px 2px 2px 0 rgba(#ccc, 0.3);
   }
 }

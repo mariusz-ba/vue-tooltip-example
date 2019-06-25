@@ -52,6 +52,19 @@ function documentScrollHandler() {
   })
 }
 
+/**
+ * This function is used for generating HTML content for tooltip
+ * @param {String} content HTML code of your content you want to put in tooltip
+ * @param {String} template HTML code used as a template for your content. Your content will be placed in place of {content}
+ */
+function createTooltipContent(content, template = null) {
+  if (template) {
+    return template.replace(`{content}`, content);
+  }
+
+  return content;
+}
+
 export default {
   inserted(el, binding) {
     const { content, offset, align } = getDirectiveProperties(binding.value);
@@ -68,7 +81,7 @@ export default {
     tooltip.style.top = 0;
     tooltip.style.left = 0;
 
-    tooltip.innerHTML = content;
+    tooltip.innerHTML = createTooltipContent(content);
 
     let animationTimeout = null;
     // Bind events
@@ -102,7 +115,7 @@ export default {
     const { content, offset, align } = getDirectiveProperties(binding.value);
 
     if (tooltip && content !== binding.oldValue.content) {
-      tooltip.innerHTML = content;
+      tooltip.innerHTML = createTooltipContent(content);
       updateTooltipPosition(el, tooltip, { align, offset });
     }
 
